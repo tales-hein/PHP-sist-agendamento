@@ -1,0 +1,16 @@
+.git/
+vendor/
+docs/*.pyc
+docs/_build
+build/artifacts/
+composer.phar
+composer.lock
+composer-test.lock
+phpcbf-fixed.diff
+.idea
+.DS_STORE
+.php_cs.cache
+.repository.md
+php-database.code-workspace
+.vscode
+database.php
