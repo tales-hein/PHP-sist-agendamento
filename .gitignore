@@ -14,3 +14,4 @@ phpcbf-fixed.diff
 php-database.code-workspace
 .vscode
 database.php
+styles.css
