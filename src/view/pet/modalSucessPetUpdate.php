@@ -5,7 +5,7 @@ echo "<script>$(document).ready(function(){ $('#myModal').modal('show'); });</sc
                             <div class='modal-dialog modal-dialog-centered'>
                                 <div class='modal-content'>
                                     <div class='modal-header'>
-                                        <h4 class='modal-title danger' id='exampleModalLabel' style='color:#198754'><i class='fas fa-user'></i>&emsp;Atualização efetuada</h4>
+                                        <h4 class='modal-title danger' id='exampleModalLabel' style='color:#198754'><i class='fas fa-dog'></i>&emsp;Atualização efetuada</h4>
                                         <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                                     </div>
                                     <div class='modal-body' style='text-align:center'>

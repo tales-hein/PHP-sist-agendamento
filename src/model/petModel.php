@@ -9,7 +9,7 @@ class Pet
     private $nome;
     private $especie;
     private $raca;
-    private $dono_id;
+    private $cpfDono;
 
 
     function __construct()
@@ -97,21 +97,21 @@ class Pet
     }
 
     /**
-     * Get the value of dono_id
+     * Get the value of cpfDono
      */
-    public function getDono_id()
+    public function getCpfDono()
     {
-        return $this->dono_id;
+        return $this->cpfDono;
     }
 
     /**
-     * Set the value of dono_id
+     * Set the value of cpfDono
      *
      * @return  self
      */
-    public function setDono_id($dono_id)
+    public function setCpfDono($cpfDono)
     {
-        $this->dono_id = $dono_id;
+        $this->cpfDono = $cpfDono;
 
         return $this;
     }
@@ -120,15 +120,17 @@ class Pet
     {
         global $conexao;
 
-        $sql = "INSERT INTO pet (
-                    id_tipo,
+        $sql = "INSERT INTO pets (
                     nome,
-                    dono
+                    cpf_dono,
+                    especie,
+                    raca
                 )   
                 VALUES (
-                    '{$this->id_tipo}',
                     '{$this->nome}',
-                    '{$this->dono}',
+                    '{$this->cpfDono}',
+                    '{$this->especie}',
+                    '{$this->raca}'
                 )";
         if (mysqli_query($conexao, $sql)) {
             return true;
@@ -138,11 +140,38 @@ class Pet
     }
 
 
-    public function alterar()
+    public function atualizar()
     {
+        global $conexao;
+
+        $sql = "UPDATE pets SET
+                    nome = '{$this->nome}',
+                    cpf_dono = '{$this->cpfDono}',
+                    especie = '{$this->especie}',
+                    raca = '{$this->raca}'
+                WHERE
+                    pet_id = '{$this->pet_id}'
+            ";
+        
+        if (mysqli_query($conexao, $sql)){
+            return true;
+        }else {
+            return false;
+        }
     }
     public function excluir()
     {
+        global $conexao;
+
+        $sql = "DELETE FROM pets WHERE
+                    pet_id = '{$this->pet_id}'
+            ";
+        
+        if (mysqli_query($conexao, $sql)){
+            return true;
+        }else {
+            return false;
+        }
     }
     public function listar()
     {
@@ -151,13 +180,16 @@ class Pet
     function validar()
     {
         $arrMsg = [];
-        if ($this->id_tipo == '') {
+        if ($this->nome == '') {
             $arrMsg[] = 'Selecione o tipo de pet';
         }
-        if ($this->nome == '') {
+        if ($this->cpfDono == '') {
             $arrMsg[] = 'Digite um nome';
         }
-        if ($this->dono == '') {
+        if ($this->especie == '') {
+            $arrMsg[] = 'Digite o dono do pet';
+        }
+        if ($this->raca == '') {
             $arrMsg[] = 'Digite o dono do pet';
         }
         return $arrMsg;
