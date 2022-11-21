@@ -6,9 +6,18 @@ $action = $_REQUEST['action'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-switch ($action) {
-    case 'login':
+$objUser = new User();
 
+$objUser->setId_user($_REQUEST['id_user']);
+$objUser->setNome($_REQUEST['nome']);
+$objUser->setSenha($_REQUEST['senha']);
+$objUser->setSenha_confirma($_REQUEST['senha_confirma']);
+$objUser->setEmail($_REQUEST['email']);
+$objUser->setTelefone($_REQUEST['telefone']);
+$objUser->setCpf($_REQUEST['cpf']);
+
+switch ($action) {
+    case 'logar':
         $arrMsgErro = [];
         if ($email == '') {
             $arrMsgErro[] = 'Informe o usuário';
@@ -36,9 +45,19 @@ switch ($action) {
         break;
     case 'logout':
         sessaoLogout();
-        
         break;
-
+    case 'cadastrar':
+        // 
+        break;
+    case 'loadPagLogin':
+        require_once(__AGENDAMENTO_DIR__ . 'src/view/login/loginEntrar.php');
+        break;
+    case 'loadPagCadastro':
+        require_once(__AGENDAMENTO_DIR__ . 'src/view/login/loginCriarConta.php');
+        break;
+    case 'modalerro':
+        require_once(__AGENDAMENTO_DIR__ . 'src/view/login/modalErroLoginCadastro.php');
+        break;
     default:
         # code...
         break;

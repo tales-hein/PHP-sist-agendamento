@@ -170,12 +170,12 @@
         let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
         $("#container-email").empty();
         $("[name='email']").attr('class', 'form-control');
-        if(email.match(pattern) || email !== ""){
+        if(email.match(pattern) && email !== ""){
             valido = true;
         }
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-email").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  Digite um E-mail válido</p>");
+            $("#container-email").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  Digite um e-mail válido</p>");
             $("[name='email']").attr('class', 'form-control is-invalid');
         };
 

@@ -1,62 +1,72 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<h3 class="title">Criação de conta Petcare</h3>
+<p class="caption mb-4">Escolha os seus dados de login a seguir e cadastre-se:</p>
+<p class="caption mb-4">*Lembre que a sua senha deverá conter no mínimo 8 caracteres</p>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/login.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-
-<body>
-    <div class="site-wrap d-md-flex align-items-stretch">
-        <div class="bg-img" style="background-image: url(/assets/img/logo.svg)">
-        </div>
-        <div class="form-wrap">
-            <div class="form-inner">
-                <h1 class="title">Criação de conta Petcare</h1>
-                <p class="caption mb-4">Escolha os seus dados de login a seguir e cadastre-se:</p>
-                <p class="caption mb-4">*Lembre que a sua senha deverá conter entre 6 e 8 caracteres</p>
-
-                <form action="#" class="pt-3">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" name="" id="user" placeholder="Seu nome de usuário" onblur="validarLogin()">
-                        <label id="lbllogin" for="email">Login</label>
-                    </div>
-
-                    <div class="form-floating">
-                        <input type="password" class="form-control" name="" id="senha" placeholder="Sua senha" onblur="validarSenha()">
-                        <label id="lblsenha" for="senha">Senha</label>
-                    </div>
-
-                    <div class="form-floating">
-                        <input type="password" class="form-control" name="" id="confirmacao" placeholder="Digite novamente a sua senha" onblur="validarConfirmacao()">
-                        <label id="lblconfirmacao" for="confirmacao">Confirme a senha</label>
-                    </div>
-
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-primary" onclick="ultimaValidacao()">Cadastrar</button>
-                    </div><br>
-
-                </form><br><br>
-
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="toggle()">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Modo noturno</label>
+<div>
+    <form id="formUserCreate" action="">
+        
+        <input type="hidden" name="action" value="inserir">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Nome:</label>
+                    <input type="text" class="form-control" name="nome" id="formGroupExampleInput" placeholder="Nome" value="<?= $objUser->getNome() ?>">
                 </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <?php include_once('loginJs.php') ?>
-</body>
+                <div id="container-nome">
 
-</html>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="formGroupExampleInput2" class="form-label">Senha:</label>
+                        <input type="password" class="form-control" name="senha" id="formGroupExampleInput2" placeholder="Senha" value="<?= $objUser->getSenha() ?>">
+                        <div id="container-senha">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="formGroupExampleInput3" class="form-label">Confirme a sua senha:</label>
+                        <input type="password" class="form-control" name="senha_confirma" id="formGroupExampleInput3" placeholder="Confirmação" value="<?= $objUser->getSenha_confirma() ?>">
+                        <div id="container-confirma-senha">
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput4" class="form-label">E-mail:</label>
+                    <input type="text" class="form-control" name="email" id="formGroupExampleInput4" placeholder="E-mail" value="<?= $objUser->getEmail() ?>">
+                    <div id="container-email">
+
+                    </div>
+                </div>
+            <li class="list-group-item">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput5" class="form-label">Telefone:</label>
+                    <input type="text" class="form-control" name="telefone" id="formGroupExampleInput5" placeholder="(XX) XXXX-XXXX" value="<?= $objUser->getTelefone() ?>">
+                    <div id="container-telefone">
+
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput6" class="form-label">CPF:</label>
+                    <input type="text" class="form-control" name="cpf" id="formGroupExampleInput6" placeholder="CPF" value="<?= $objUser->getCpf() ?>">
+                    <div id="container-cpf">
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </form><br>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" onclick="loginJs.fCadastrar()">Cadastrar</button>
+    </div><br><br>
+
+
+    <p>Lembrou que já tem cadastro? <a href="javascript:void(0)" onclick="loginJs.fVoltar()"><u>Clique aqui</u></a></p>
+</div>
+<?php include_once('loginJs.php') ?>
