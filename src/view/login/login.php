@@ -1,3 +1,7 @@
+<?php
+$ignoraSessao = true;
+include_once('../../../lib/config.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

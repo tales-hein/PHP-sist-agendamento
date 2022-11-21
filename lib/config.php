@@ -1,8 +1,14 @@
 <?php
 session_start();
+
 error_reporting(E_ALL & ~E_WARNING);
 
 include_once('function.php');
+
+if($ignoraSessao == false){
+    checarSessao();
+}
+
 include_once('database.php');
 
 define('__AGENDAMENTO_TITULO__', 'Petshop');

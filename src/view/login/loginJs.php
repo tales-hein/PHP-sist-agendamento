@@ -2,9 +2,11 @@
     var loginJs = ({
         fEntrar: function() {
             $.ajax({
-                'url': '/src/controller/loginController.php?action=logar'
+                'url': '/src/controller/loginController.php',
+                'method': 'post',
+                'data': $('').serialize()
             }).done(function(dados) {
-                $('#layoutSidenav_content').html(dados);
+                $('#containermodal').html(dados);
             })
         },
         fVoltar: function() {
@@ -32,13 +34,13 @@
 
             if (validaCadastro(inputFormNome, inputFormSenha, inputFormConfirmaSenha, inputFormEmail, inputFormTelefone, inputFormCpf)) {
                 console.log("Verdadeiro");
-                // $.ajax({
-                //     'url': '/src/controller/loginController.php',
-                //     'method': 'post',
-                //     'data': $('#formUserCreate').serialize()
-                // }).done(function(dados) {
-                //     $('#layoutSidenav_content').html(dados);
-                // })
+                $.ajax({
+                    'url': '/src/controller/loginController.php',
+                    'method': 'post',
+                    'data': $('#formUserCreate').serialize()
+                }).done(function(dados) {
+                    $('#layoutSidenav_content').html(dados);
+                })
             }else {
                 console.log("Falso");
                 $.ajax({

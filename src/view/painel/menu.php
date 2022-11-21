@@ -31,6 +31,6 @@
     </div>
     <div class="sb-sidenav-footer">
         <div class="small">Logado como:</div>
-        <?php $_SESSION['user'] ?>
+        <?= $_SESSION['email'] ?>
     </div>
 </nav>

@@ -4,7 +4,7 @@
 
 <div>
     <form id="formUserCreate" action="">
-        
+
         <input type="hidden" name="action" value="inserir">
         <ul class="list-group">
             <li class="list-group-item">
@@ -65,7 +65,6 @@
     <div class="d-grid gap-2 col-6 mx-auto">
         <button class="btn btn-primary" onclick="loginJs.fCadastrar()">Cadastrar</button>
     </div><br><br>
-
 
     <p>Lembrou que já tem cadastro? <a href="javascript:void(0)" onclick="loginJs.fVoltar()"><u>Clique aqui</u></a></p>
 </div>

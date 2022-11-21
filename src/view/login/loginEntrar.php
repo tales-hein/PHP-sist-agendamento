@@ -1,6 +1,7 @@
 <h1 class="title">Login Petcare</h1>
 
-<form action="" class="pt-3" method="POST">
+<form action="<?= __AGENDAMENTO_HTTP__ ?>src/controller/loginController.php" method="post" class="pt-3">
+    <input type="hidden" name="action" value="logar">
     <div class="form-floating">
         <input type="text" class="form-control" name="email" id="email" onblur="validarEmail()">
         <label id="lblemail" for="email">Digite o seu email cadastrado</label>
@@ -16,7 +17,7 @@
         </div>
     </div>
     <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="submit" class="btn btn-primary" onclick="loginJs.fEntrar()">Entrar</button>
+        <button type="submit" class="btn btn-primary">Entrar</button>
     </div>
 </form><br><br>
 <p>Não tem cadastro? <a href="javascript:void(0)" onclick="loginJs.fPagCadastro()"><u>Clique aqui</u></a></p>

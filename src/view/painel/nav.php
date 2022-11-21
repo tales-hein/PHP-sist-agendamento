@@ -12,5 +12,5 @@
             <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
         </div>
     </form>
-    <a class="nav-link" id="navbarDropdown" role="button" href="javascript:void(0)" onclick=""><i class="fa fa-right-from-bracket fa-xl"></i></a>
+    <a class="nav-link" id="navbarDropdown" role="button" href="<?= __AGENDAMENTO_HTTP__ ?>src/controller/loginController.php?action=logout"><i class="fa fa-right-from-bracket fa-xl"></i></a>
 </nav>
