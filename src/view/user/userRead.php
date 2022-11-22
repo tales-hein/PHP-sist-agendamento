@@ -5,7 +5,7 @@
             <li class="breadcrumb-item active">Cadastro / Usuário</li>
         </ol>
         <div class="row">
-            <div class="col-xl-8">
+            <div class="col-xl-12">
                 <div class="card mb-4">
                     <div class="card-header">
                         <p><i class="fas fa-user"></i>&ensp;Lista de usuários cadastrados: </p>

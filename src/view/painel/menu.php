@@ -19,9 +19,9 @@
                 </nav>
             </div>
             <div class="sb-sidenav-menu-heading">Painel de serviço</div>
-            <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-calendar-days"></i></div>
-                Agendamentos
+            <a class="nav-link" href="javascript:void(0)" onclick="agendamentoJs.fCarregarMenu('email')">
+                <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
+                Email
             </a>
             <a class="nav-link" href="tables.html">
                 <div class="sb-nav-link-icon"><i class="fas fa-file-export"></i></div>

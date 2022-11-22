@@ -5,7 +5,7 @@
             <li class="breadcrumb-item active">Cadastro / Pets</li>
         </ol>
         <div class="row">
-            <div class="col-xl-6">
+            <div class="col-xl-12">
                 <div class="card mb-4">
                     <div class="card-header">
                         <p><i class="fas fa-dog"></i>&ensp;Lista de pets cadastrados: </p>
