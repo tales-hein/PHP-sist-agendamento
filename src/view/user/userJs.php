@@ -93,7 +93,7 @@
 
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-nome").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  Digite um nome válido</p>");
+            $("#container-nome").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>  Digite um nome válido</p>");
             $("[name='nome']").attr('class', 'form-control is-invalid');
         };
 
@@ -114,7 +114,7 @@
 
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-senha").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  Digite uma senha válida</p>");
+            $("#container-senha").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>  Digite uma senha válida</p>");
             $("[name='senha']").attr('class', 'form-control is-invalid');
         }
 
@@ -135,7 +135,7 @@
 
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-confirma-senha").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  Confirme a senha digitada</p>");
+            $("#container-confirma-senha").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>  Confirme a senha digitada</p>");
             $("[name='senha_confirma']").attr('class', 'form-control is-invalid');
         };
 
@@ -156,8 +156,8 @@
 
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-senha").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  As senhas não são iguais</p>");
-            $("#container-confirma-senha").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  As senhas não são iguais</p>");
+            $("#container-senha").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>  As senhas não são iguais</p>");
+            $("#container-confirma-senha").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>  As senhas não são iguais</p>");
             $("[name='senha_confirma']").attr('class', 'form-control is-invalid');
             $("[name='senha']").attr('class', 'form-control is-invalid');
         };
@@ -175,7 +175,7 @@
         }
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-email").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  Digite um e-mail válido</p>");
+            $("#container-email").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>  Digite um e-mail válido</p>");
             $("[name='email']").attr('class', 'form-control is-invalid');
         };
 
@@ -196,7 +196,7 @@
 
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-telefone").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  Digite um telefone válido</p>");
+            $("#container-telefone").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>  Digite um telefone válido</p>");
             $("[name='telefone']").attr('class', 'form-control is-invalid');
         };
 
@@ -230,7 +230,7 @@
 
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-cpf").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  Digite um CPF válido</p>");
+            $("#container-cpf").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>  Digite um CPF válido</p>");
             $("[name='cpf']").attr('class', 'form-control is-invalid');
         };
 

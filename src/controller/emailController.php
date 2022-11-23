@@ -40,7 +40,7 @@ switch ($action) {
                 $objEmail->Host       = 'smtp-mail.outlook.com';                     //Set the SMTP server to send through
                 $objEmail->SMTPAuth   = true;                                   //Enable SMTP authentication
                 $objEmail->Username   = __EMAIL__;                     //SMTP username
-                $objEmail->Password   = 'petcaretecpuc1.';                               //SMTP password
+                $objEmail->Password   = __SENHA__;                               //SMTP password
                 $objEmail->SMTPSecure = PHPmailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                 $objEmail->Port       = 587;
                 $objEmail->SMTPSecure = 'tls';

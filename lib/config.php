@@ -15,6 +15,7 @@ define('__AGENDAMENTO_TITULO__', 'Petshop');
 define('__AGENDAMENTO_DIR__', $_SERVER['DOCUMENT_ROOT'] . '/');
 define('__AGENDAMENTO_HTTP__', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 define('__EMAIL__', 'petcare.petshop@outlook.com');
+define('__SENHA__', 'petcaretecpuc1.');
 
 require __AGENDAMENTO_DIR__ . '/vendor/autoload.php';
 

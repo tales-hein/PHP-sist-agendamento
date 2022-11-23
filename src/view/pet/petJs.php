@@ -86,7 +86,7 @@
 
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-nome").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  Digite um nome válido</p>");
+            $("#container-nome").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>  Digite um nome válido</p>");
             $("[name='nome']").attr('class', 'form-control is-invalid');
         };
 
@@ -107,7 +107,7 @@
 
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-dono").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>  Digite um CPF válido</p>");
+            $("#container-dono").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>  Digite um CPF válido</p>");
             $("[name='dono']").attr('class', 'form-control is-invalid');
         }
 
@@ -127,7 +127,7 @@
 
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-especie").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>Selecione uma das opções de espécie</p>");
+            $("#container-especie").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>Selecione uma das opções de espécie</p>");
         };
 
         return valido
@@ -143,7 +143,7 @@
 
         //Mostrar erro ao usuário 
         if (valido == false) {
-            $("#container-raca").append("<p style='color:#dc3545;font-size:14px;font-weight:bold'> <i class='fa fa-circle-xmark'></i>Digite o nome da raça do seu pet</p>");
+            $("#container-raca").append("<p style='color:#dc3545;font-size:14px'> <i class='fa fa-circle-xmark'></i>Digite o nome da raça do seu pet</p>");
             $("[name='raca']").attr('class', 'form-control is-invalid');
         };
 
