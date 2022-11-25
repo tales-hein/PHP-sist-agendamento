@@ -1,9 +1,8 @@
 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
     <div class="sb-sidenav-menu">
         <div class="nav">
-            <a class="nav-link" href="">
-                <div class="sb-nav-link-icon"><i class="fas fa-house"></i></div>
-                Home
+            <a class="nav-link" href="javascript:void(0)" >
+                <div class="sb-nav-link-icon"><i class="fas fa-house"></i></div>Home
             </a>
             <div class="sb-sidenav-menu-heading">Painel Administrativo</div>
             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -15,7 +14,7 @@
                 <nav class="sb-sidenav-menu-nested nav">
                     <a class="nav-link" href="javascript:void(0)" onclick="agendamentoJs.fCarregarMenu('user')">Usuários</a>
                     <a class="nav-link" href="javascript:void(0)" onclick="agendamentoJs.fCarregarMenu('pet')">Pets</a>
-                    <a class="nav-link" href="javascript:void(0)" onclick="agendamentoJs.fCarregarMenu('servico')">Serviços</a>
+                    <!-- <a class="nav-link" href="javascript:void(0)" onclick="agendamentoJs.fCarregarMenu('servico')">Serviços</a> -->
                 </nav>
             </div>
             <div class="sb-sidenav-menu-heading">Painel de serviço</div>
@@ -23,9 +22,9 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
                 Email
             </a>
-            <a class="nav-link" href="tables.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-file-export"></i></div>
-                Relatórios
+            <a class="nav-link" href="javascript:void(0)" onclick="agendamentoJs.fCarregarMenu('servico')">
+                <div class="sb-nav-link-icon"><i class="fas fa-calendar-days"></i></div>
+                Agendamento
             </a>
         </div>
     </div>

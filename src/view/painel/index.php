@@ -19,6 +19,7 @@
             <?php include_once('menu.php') ?>
         </div>
         <div id="layoutSidenav_content">
+            <?php include_once('home.php') ?>
             <?php include_once('rodape.php') ?>
         </div>
     </div>

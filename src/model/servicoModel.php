@@ -5,10 +5,10 @@
  */
 class Servico
 {
-    private $id_servico;
-    private $id_tipo;
-    private $nome;
-    private $dono;
+    private $servico_id;
+    private $data_id;
+    private $cliente_cpf;
+    private $nome_pet;
 
 
     function __construct()
@@ -16,83 +16,115 @@ class Servico
     }
 
     /**
-     * Get the value of id_servico
+     * Get the value of servico_id
      */
-    public function getId_servico()
+    public function getServico_id()
     {
-        return $this->id_servico;
+        return $this->servico_id;
     }
 
     /**
-     * Set the value of id_servico
+     * Set the value of servico_id
      *
      * @return  self
      */
-    public function setId_servico($id_servico)
+    public function setServico_id($servico_id)
     {
-        $this->id_servico = $id_servico;
+        $this->servico_id = $servico_id;
 
         return $this;
     }
 
     /**
-     * Get the value of id_tipo
+     * Get the value of data_id
      */
-    public function getId_tipo()
+    public function getData_id()
     {
-        return $this->id_tipo;
+        return $this->data_id;
     }
 
     /**
-     * Set the value of id_tipo
+     * Set the value of data_id
      *
      * @return  self
      */
-    public function setId_tipo($id_tipo)
+    public function setData_id($data_id)
     {
-        $this->id_tipo = $id_tipo;
+        $this->data_id = $data_id;
 
         return $this;
     }
 
     /**
-     * Get the value of nome
+     * Get the value of cliente_cpf
      */
-    public function getNome()
+    public function getCliente_cpf()
     {
-        return $this->nome;
+        return $this->cliente_cpf;
     }
 
     /**
-     * Set the value of nome
+     * Set the value of cliente_cpf
      *
      * @return  self
      */
-    public function setNome($nome)
+    public function setCliente_cpf($cliente_cpf)
     {
-        $this->nome = $nome;
+        $this->cliente_cpf = $cliente_cpf;
 
         return $this;
     }
 
     /**
-     * Get the value of Dono
+     * Get the value of nome_pet
      */
-    public function getDono()
+    public function getNome_pet()
     {
-        return $this->dono;
+        return $this->nome_pet;
     }
 
     /**
-     * Set the value of Dono
+     * Set the value of nome_pet
      *
      * @return  self
      */
-    public function setDono($dono)
+    public function setNome_pet($nome_pet)
     {
-        $this->dono = $dono;
+        $this->nome_pet = $nome_pet;
 
         return $this;
+    }
+
+    public function atualizarBdCreate()
+    {
+        global $conexao;
+
+        $sql = "UPDATE agenda SET
+                                status_data='f'
+                          WHERE
+                                data_id='{$this->data_id}';
+                         ";
+        if(mysqli_query($conexao, $sql)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function atualizarBdDesagendar($data_id)
+    {
+        global $conexao;
+
+        $sql = "UPDATE agenda SET
+                                status_data='a'
+                          WHERE
+                                data_id='{$data_id}';
+                         ";
+        if(mysqli_query($conexao, $sql)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function inserir()
@@ -100,28 +132,34 @@ class Servico
         global $conexao;
 
         $sql = "INSERT INTO servico (
-                    id_tipo,
-                    nome,
-                    dono
+                    cliente_cpf,
+                    pet_nome,
+                    data_id
                 )   
                 VALUES (
-                    '{$this->id_tipo}',
-                    '{$this->nome}',
-                    '{$this->dono}',
+                    '{$this->cliente_cpf}',
+                    '{$this->nome_pet}',
+                    '{$this->data_id}'
                 )";
         if (mysqli_query($conexao, $sql)) {
-            return true;
+            return $this->atualizarBdCreate();
         } else {
             return false;
         }
     }
-
-
-    public function alterar()
+    public function excluir($data_id)
     {
-    }
-    public function excluir()
-    {
+        global $conexao;
+
+        $sql = "DELETE FROM servico WHERE
+                    data_id = '{$data_id}'
+            ";
+        
+        if (mysqli_query($conexao, $sql)){
+            return $this->atualizarBdDesagendar($data_id);
+        }else {
+            return false;
+        }
     }
     public function listar()
     {
@@ -130,13 +168,13 @@ class Servico
     function validar()
     {
         $arrMsg = [];
-        if ($this->id_tipo == '') {
+        if ($this->cliente_cpf == '') {
             $arrMsg[] = 'Selecione o serviço';
         }
-        if ($this->nome == '') {
+        if ($this->nome_pet == '') {
             $arrMsg[] = 'Digite o nome do pet';
         }
-        if ($this->dono == '') {
+        if ($this->data_id == '') {
             $arrMsg[] = 'Digite o CPF do dono';
         }
         return $arrMsg;
