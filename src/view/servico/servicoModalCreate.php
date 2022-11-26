@@ -64,7 +64,7 @@ echo "<script>$(document).ready(function(data){ $('#myModal').modal('show'); });
                                     </div>
                                     <div class='modal-footer'>
                                         <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Voltar</button>
-                                        <button type='button' class='btn btn-primary' onclick=\"servicoJs.fAgendar()\">Agendar</button>
+                                        <button type='button' class='btn btn-primary' onclick=\"servicoJs.fAgendar()\" data-bs-dismiss='modal'>Agendar</button>
                                     </div>
                                 </div>
                             </div>

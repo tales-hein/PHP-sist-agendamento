@@ -22,7 +22,7 @@
                 'method': 'post',
                 'data': $('#formServicoCreate').serialize()
             }).done(function(dados) {
-                $('#containermodalcreate').html(dados);
+                $('#layoutSidenav_content').html(dados);
             })
         },
         fModalAgendar: function(data_id) {
@@ -55,7 +55,6 @@
                 }
             }).done(function(dados) {
                 $('#containermodalinformacao').html(dados);
-                
                 $.ajax({
                     'url': '/src/controller/servicoController.php?action=atualizaragenda',
                 }).done(function(dados) {

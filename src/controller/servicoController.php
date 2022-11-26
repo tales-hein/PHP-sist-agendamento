@@ -18,6 +18,8 @@ switch ($action) {
         $arrMsgErro = $objServico->validar();
         if (count($arrMsgErro) == 0) {
             if ($objServico->inserir() === true) {
+                require_once(__AGENDAMENTO_DIR__ . 'src/view/servico/servicoCreate.php');
+                require_once(__AGENDAMENTO_DIR__ . 'src/view/servico/servicoJs.php');
                 require_once(__AGENDAMENTO_DIR__ . 'src/view/servico/modalSuccessServico.php');
             } else {
                 require_once(__AGENDAMENTO_DIR__ . 'src/view/servico/modalErroServico.php');
